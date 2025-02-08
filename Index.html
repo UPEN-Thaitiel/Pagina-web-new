@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            background-image:url("fondo-pantalla-mac-03.jpg");
+            animation: fadeIn 2s ease-in;
+            background-size: cover;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+            animation: scaleUp 1s ease-in-out, glow 2s infinite alternate;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideIn 1.2s ease-in-out forwards;
+        }
+        .card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out, background-color 0.5s;
+            animation: popIn 1s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #e0e0e0;
+        }
+        a {
+            transition: color 0.3s ease-in-out;
+            animation: pulse 2s infinite;
+        }
+        a:hover {
+            color: #ff5733;
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            animation: fadeIn 2s ease-in;
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #007bff; }
+            to { text-shadow: 0 0 15px #007bff; }
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About me</h1>
+
+        <div class="section clearfix">
+            <h2>¡Hi!</h2>
+            <p>
+                My name is "Andres De Jesus Romero Herrera" and I'm 20 years old. I was born in Tepic and since I was a child I have been fascinated by programming.
+                Currently, I am studying Software Engineering and I love learning new things every day.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>My Story</h2>
+            <p>
+                From a young age, I have been attracted to programming web pages. I remember spending hours watching videos and programming at the same time so that I could improve every day.
+This passion led me to create this page, to share a little bit of my experience as a programmer.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>My Skills</h2>
+            <div class="card">
+                <h3>Technical skills</h3>
+                <ul>
+                    <li>Mobile software development: I like to create the next app that everyone will use on their phones. It's an opportunity to make life easier and more fun!</li>
+                    <li>Computer security: I am a guardian of information. I make sure that the data of people and companies is safe from cyberattacks.</li>
+                    <li>Game Development: I'm passionate about creating virtual worlds and amazing characters that come to life on screen. It's like telling interactive stories!</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Soft skills</h3>
+                <ul>
+                    <li>Teamwork: I'm a team player. I like to collaborate with others, share my knowledge and learn from their skills.</li>
+                    <li>Critical thinking: I'm a curious thinker. I am not satisfied with the first answer, I always look further and question what they tell me.</li>
+                    <li>Adaptability: I'm like a chameleon. I adapt to changes quickly and learn new technologies with enthusiasm.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>My projects</h2>
+            <div class="card">
+                <h3>Personal website</h3>
+                <p>
+                    My first project was creating my own website! I wanted to showcase my skills, projects and experiences in a creative and original way. I learned a lot about web design, HTML and CSS. Now I have an online space where I can share my work with the world! <br>
+                    <a href="https://github.com/UPEN-Thaitiel/online-resume-Andr3w2.git">Personal website</a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>HTML</h3>
+                <p>
+                    After that i make my personal website, I tried to modify some HTML codes to challenge myself to make them the same as the photos I took as a reference. <br>
+                   <a href="https://github.com/UPEN-Thaitiel/html-intermediate-Andr3w2.git">HTML</a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>HTML Basic</h3>
+                <p>
+                    This was my first time programming in HTML, it went very well, better than I expected <br>
+                    <a href="https://github.com/UPEN-Thaitiel/html-basics-Andr3w2.git">HTML Basic</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact me</h2>
+            <p>
+                If you want to know a little more about me, you can contact me through my email: jisusher6162@gmail.com <br>or my phone number: 311-258-78-74. 
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>¡Thanks for your atention!</p>
+    </footer>
+</body>
+</html>

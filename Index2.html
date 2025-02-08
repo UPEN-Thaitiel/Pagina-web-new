@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            background-image: url("fondo-pantalla-mac-03.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            animation: fadeInBackground 2s ease-in;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            animation: slideDown 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+            animation: rotateFadeIn 1.5s ease-in-out;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About me</h1>
+        
+        <div class="section clearfix">
+            <h2>¡Hello everybody!</h2>
+            <p>My name is "Reyna Isabel Rodríguez Cortés" and I am 20 years old. I was born in Tepic and I was interested in the programming of web pages more than anything else because of the animations that they can have, it is fascinating and I would like to learn how to make them myself </p>
+        </div>
+        
+        <div class="section">
+            <h2>My Story</h2>
+            <p>Since high school, I've been drawn to web programming. I remember that every time I looked for information and pages with animations appeared, I always asked myself, how do they do it?, and I set out to learn how to make those animations myself.
+                What led me to make this page.</p>
+        </div>
+        
+        <div class="section">
+            <h2>My Skills</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="moveSlide(-1, 'skills')">❮</button>
+                <div class="carousel-container" id="skills">
+                    <div class="carousel-item">Full-stack web development: "I'm like a digital architect. I can build a website from scratch, from design to functionality, both front-end and back-end."</div>
+                    <div class="carousel-item">Data analysis: "I'm a data detective. I can find hidden patterns and trends in large amounts of information and use them to make smart decisions."</div>
+                    <div class="carousel-item">Machine learning: "I'm a machine trainer. I can teach computers to learn from data and make decisions without being explicitly programmed."</div>
+                </div>
+                <button class="carousel-btn next" onclick="moveSlide(1, 'skills')">❯</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>My Soft Skills</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="moveSlide(-1, 'skills')">❮</button>
+                <div class="carousel-container" id="skills">
+                    <div class="carousel-item">Creativity: "I'm an artist of technology. I can find original and innovative solutions to complex problems."</div>
+                    <div class="carousel-item">Leadership: "I'm a team captain. I can guide others towards common goals and motivate them to give their best."</div>
+                    <div class="carousel-item">Time management: "I'm a time master. I can organize my tasks and priorities to meet deadlines and objectives."</div>
+                </div>
+                <button class="carousel-btn next" onclick="moveSlide(1, 'skills')">❯</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>My projects</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="moveSlide(-1, 'projects')">❮</button>
+                <div class="carousel-container" id="projects">
+                    <div class="carousel-item">My first project was creating my own website! <br><a href="https://github.com/UPEN-Thaitiel/online-resume-reynarodriguezc.git">Personal website</a></div>
+                    <div class="carousel-item">After that I made my personal website, modifying HTML codes.<br><a href="https://github.com/UPEN-Thaitiel/html-intermediate-reynarodriguezc.git">HTML</a></div>
+                    <div class="carousel-item">This was my first time programming in HTML.<br><a href="https://github.com/UPEN-Thaitiel/html-basics-reynarodriguezc.git">HTML Basic</a></div>
+                </div>
+                <button class="carousel-btn next" onclick="moveSlide(1, 'projects')">❯</button>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Contact me</h2>
+            <p>If you want to know a little more about me, you can contact me through my email: Reynarodriguez12@gmail.com <br>or my phone number: 311-878-20-17.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>¡Thanks for your attention!</p>
+    </footer>
+
+    <script>
+        function moveSlide(direction, id) {
+            const container = document.getElementById(id);
+            let index = parseInt(container.getAttribute("data-index")) || 0;
+            const items = container.children.length;
+            index = (index + direction + items) % items;
+            container.setAttribute("data-index", index);
+            container.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+</body>
+</html>
